@@ -580,7 +580,7 @@ start_guacamole() {
 
     # Start tomcat
     cd /usr/local/tomcat
-    exec catalina.sh run
+    exec catalina.sh jpda start
 
 }
 
