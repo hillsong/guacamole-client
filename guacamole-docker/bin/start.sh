@@ -332,6 +332,10 @@ END
         "postgresql-user-required" \
         "$POSTGRES_USER_REQUIRED"
 
+    set_optional_property               \
+        "postgresql-default-statement-timeout" \
+        "$POSTGRES_DEFAULT_STATEMENT_TIMEOUT"
+
     # Add required .jar files to GUACAMOLE_LIB and GUACAMOLE_EXT
     ln -s /opt/guacamole/postgresql/postgresql-*.jar "$GUACAMOLE_LIB"
     ln -s /opt/guacamole/postgresql/guacamole-auth-*.jar "$GUACAMOLE_EXT"
