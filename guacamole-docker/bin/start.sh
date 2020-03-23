@@ -336,6 +336,10 @@ END
         "postgresql-default-statement-timeout" \
         "$POSTGRES_DEFAULT_STATEMENT_TIMEOUT"
 
+    set_optional_property               \
+        "postgresql-socket-timeout" \
+        "$POSTGRES_SOCKET_TIMEOUT"
+
     # Add required .jar files to GUACAMOLE_LIB and GUACAMOLE_EXT
     ln -s /opt/guacamole/postgresql/postgresql-*.jar "$GUACAMOLE_LIB"
     ln -s /opt/guacamole/postgresql/guacamole-auth-*.jar "$GUACAMOLE_EXT"
