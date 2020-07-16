@@ -92,6 +92,8 @@ public class TokenValidationService {
 
             String usernameClaim = confService.getUsernameClaimType();
 
+            logger.debug("About to validate token: \"{}\"", token);
+
             // Validate JWT
             JwtClaims claims = jwtConsumer.processToClaims(token);
 
