@@ -197,6 +197,9 @@ angular.module('auth').factory('authenticationService', ['$injector',
         // If authentication fails, propogate failure to returned promise
         ['catch'](requestService.createErrorCallback(function authenticationFailed(error) {
 
+            // Sending an old token may have caused a server error - clear it
+            clearAuthenticationResult();
+
             // Request credentials if provided credentials were invalid
             if (error.type === Error.Type.INVALID_CREDENTIALS)
                 $rootScope.$broadcast('guacInvalidCredentials', parameters, error);
